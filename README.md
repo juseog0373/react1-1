@@ -1,5 +1,76 @@
 # 김준석 202030207  
 
+## 3월 27일 강의 내용
+### JSX란?
+JS + XML(HTML)을 합친 자바스크립트 확장문법이다.
+
+### JSX의 역할
+- JSX는 내부적으로 XML/HTML 코드를 자바스크립트로 변환함.
+- React가 createElement함수를 사용하여 자동으로 자바스크립트로 변환해줌.
+- JSX는 가독성을 높여주는 역할.
+
+### JSX의 장점
+- XSS, Injection Attack 방어 가능
+- 긴 줄에 자바스크립트 코드를 간결하게 줄일 수 있음.
+
+### JSX 코드 작성해보기
+```jsx
+export default function Book(props) {
+    return (
+        <div>
+            <h1>{`이 책의 이름은 ${props.name} 입니다.`}</h1>
+            <h1>{`이 책의 페이지 수는 ${props.numOfPage} 입니다. `}</h1>
+        </div>
+    )
+}
+```
+```jsx
+export default function Library(props) {
+    return (
+        <div>
+            <Book name="처음 만난 파이썬" numOfPage={400} />
+            <Book name="처음 만난 AWS" numOfPage={500} />
+            <Book name="처음 만난 리액트" numOfPage={600} />
+        </div>
+    )
+}
+```
+```js
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    {/* <App /> */}
+    {/* <Book /> */}
+    <Library />
+  </React.StrictMode>
+);
+```
+### 엘리먼트의 정의
+- 엘리먼트는 리액트 앱을 구성하는 요소
+- 웹 사이트에서 DOM 엘리먼트이며, HTML 요소를 의미함
+
+### 리액트 엘리먼트 vs DOM 엘리먼트
+- 리액트 엘리먼트는 Virtual DOM 형태이다
+- DOM 엘리먼트는 페이지의 모든 정보를 갖고 있어 무겁다
+- 리액트 엘리먼트는 변화한 부분만 갖고 있어 가볍다  
+
+### 엘리먼트의 생김새
+- 리액트 엘리먼트는 자바스크립트 객체 형태로 존재
+- 컴포넌트, 속성 및 모든 자식들을 포함하는 일반 JS 객체
+
+### 엘리먼트의 특징
+- 리액트 엘리먼트의 가장 큰 특징은 **불변성**
+- 한번 생성된 엘리먼트의 자식, 속성(attr)을 바꿀 수 없다
+
+### Root DOM node
+```html
+<div id="root"></div>
+```
+```jsx
+const element = <h1>안녕, 리액트</h1>
+ReactDOM.render(element, docutment.getElementById('root'))
+```
+
 ## 3월 20일 강의 내용
 ### 리액트의 장점
 1. 빠른 업데이트와 렌더링 속도
