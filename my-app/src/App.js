@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import Welcome from './chapter05/Welcome';
+
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
           Learn React gogo
         </a>
       </header>
+      <Welcome name="나는야 퉁퉁이"/>
+      <Welcome name="나는야 이슬이"/>
+      <Welcome name="나는야 비실이"/>
     </div>
   );
 }
