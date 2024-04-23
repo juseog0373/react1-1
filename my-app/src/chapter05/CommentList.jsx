@@ -12,11 +12,11 @@ const comments  = [
     },
     {
         name: "이슬이",
-        comment: "나는야s이슬이",
+        comment: "나는야이슬이",
     }
 ]
 
-export default function CommentList(props) {
+export default function CommentList() {
     return (
         <div>
             {comments.map((comment) => {
