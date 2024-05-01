@@ -4,12 +4,13 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Book from './chapter03/Book';
 import Library from './chapter03/Library';
-import Welcome from './chapter05/Welcome';
+// import Welcome from './chapter05/Welcome';
 import Counter from './chapter07/UserCounter'
 import Comment from './chapter05/Comment';
 import CommentList from './chapter05/CommentList';
 import FocusButton from './chapter07/FocusButton';
 import Clock from './chapter04/Clock';
+import Accommodate from './chapter07/Accommodate';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -21,7 +22,8 @@ root.render(
     {/* <CommentList/> */}
     {/* <FocusButton/> */}
     {/* <Clock /> */}
-    <Welcome name="리액트"/>
+    {/* <Welcome name="리액트"/> */}
+    <Accommodate/>
   </React.StrictMode>
 );
 // }, 1000)
