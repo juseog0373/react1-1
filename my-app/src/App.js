@@ -7,12 +7,13 @@ import MainPage from './MainPage';
 import LandingPage from './LandingPage';
 import NumberList from './NumberList';
 import AttendanceBook from './AttendanceBook';
+import SignUp from './chapter11/SignUp';
 
 
 function App() {
   return (
     <div className="App">
-      <AttendanceBook/>
+      <SignUp/>
     </div>
   );
 }
