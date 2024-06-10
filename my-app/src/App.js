@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
 import Welcome from './chapter05/Welcome';
-import Toggle from './Toggle';
-import LoginControl from './LoginControl';
+import Toggle from './chapter08/Toggle';
+import LoginControl from './chapter09/LoginControl';
 import MainPage from './MainPage';
-import LandingPage from './LandingPage';
-import NumberList from './NumberList';
-import AttendanceBook from './AttendanceBook';
+import LandingPage from './chapter09/LandingPage';
+import NumberList from './chapter10/NumberList';
+import AttendanceBook from './chapter10/AttendanceBook';
 import SignUp from './chapter11/SignUp';
 import Calculator from './chapter12/Calculator';
 import WelcomeDialog from './chapter13/WelcomeDialog';
-import SplitPane from './chapter13/SplitPane';
-
-
+import ConfirmButton from './chapter08/ConfirmButton';
 
 function App() {
   return (
     <div className="App">
-      <SplitPane left={<Cotacts/>} right={<Chat/>}/>
+      <SignUp/>
     </div>
   );
 }

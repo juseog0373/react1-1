@@ -1,4 +1,4 @@
-export default function SplitPane() {
+export default function SplitPane(props) {
     return (
         <div className="SplitPane">
             <div className="SplitPane-left">

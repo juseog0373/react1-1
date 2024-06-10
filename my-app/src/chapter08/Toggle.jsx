@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 export default function Toggle(props) {
-    const [isToggleOn, setInToggleOn] = useState(true)
+    const [isToggleOn, setIsToggleOn] = useState(true)
 
     const handleClick = () => {
-        setInToggleOn((isToggleOn) => !isToggleOn)
+        setIsToggleOn((isToggleOn) => !isToggleOn)
     }
     return (
         <button onClick={handleClick}>

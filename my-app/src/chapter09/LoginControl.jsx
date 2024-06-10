@@ -1,7 +1,7 @@
 import {useState} from "react"
 import Greeting from "./Greeting"
 
-export default function LoginControl(props) {
+export default function LoginControl() {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
 
     const handleLoginClick = () => {
@@ -13,6 +13,7 @@ export default function LoginControl(props) {
     }
 
     let button
+    
     if(isLoggedIn) {
         button = <LogoutButton onClick={handleLogoutClick}/>
     } else {
