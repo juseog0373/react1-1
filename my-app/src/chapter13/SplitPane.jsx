@@ -10,3 +10,15 @@ export default function SplitPane(props) {
         </div>
     )
 }
+// function App(props) {
+//     return (
+//         <SplitPane
+//             left = {
+//                 <Contacts/>
+//             }
+//             right = {
+//                 <Chat/>
+//             }
+//         />
+//     )
+// }

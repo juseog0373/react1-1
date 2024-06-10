@@ -11,13 +11,12 @@ import SignUp from './chapter11/SignUp';
 import Calculator from './chapter12/Calculator';
 import WelcomeDialog from './chapter13/WelcomeDialog';
 import ConfirmButton from './chapter08/ConfirmButton';
+import ProfileCard from './chapter13/ProfileCard';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <SignUp/>
+      <ProfileCard/>
     </div>
   );
 }
-
-export default App;
