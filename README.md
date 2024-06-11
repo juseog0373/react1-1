@@ -1,5 +1,58 @@
 # 김준석 202030207  
 
+## 6월 11일 강의 내용
+### Specializtion(특수화, 전문화)
+- 범용적인 개념을 구별이 되게 구체화하는 것을 특수화라고 함
+- 객체지향 언어에서는 상속을 사용하여 특수화를 구현함
+- 리액트에서는 합성을 사용하여 특수화를 구현
+
+### Containment + Specializtion 같이 사용하기
+- Containment를 위해서 props.children을 사용하고, Specializtion을 위해 직접 정의한 props를 사용하면 된다
+
+### 리액트에서의 상속
+- 자식 클래스는 부모 클래스가 가진 변순 함수 등의 속성을 모두 갖게 되는 개념
+- 하지만 리액트에서는 상속보다 합성을 통해 새로운 컴포넌트를 생성
+- **"복잡한 컴포넌트를 쪼개 여러개의 컴포넌트로 만들고 만든 컴포넌트들을 조합하여 새로운 컴포넌트를 만들자"**
+
+### 컨텍스트
+- 기존에 리액트는 데이터를 컴포넌트의 props를 통해 부모에서 자식으로 단방향으로 전달함
+- 컨텍스트는 리액트 컴포넌트들 사이에서 데이터를 기존의 props를 통해 전달하는 방식대신 '컴포넌트 트리를 통해 곧바로 컴포넌트에 전달하는 방식'을 제공함
+- 컨텍스트를 사용하면 일일이 props로 전달할 필요 없이 그림처럼 데이터를 필요로 하는 컴포넌트에 곧바로 전달할 수 있다₩
+![Alt text](image-4.png)
+
+### 언제 컨텍스트를 사용해야 할까
+- 여러 컴포넌트에서 계속해서 접근이 일어날 수 있는 데이터가 있는 경우
+- 반복적인 코드를 계속해서 작성해 주어야 하기 때문에 비효율적이고 가독성이 떨어진다
+- 컨텍스트를 사용하려면 이러한 방식을 깔끔하게 개선할 수 있다
+- React.createContext()함수를 사용하여 ThemeContext라는 이름의 컨텍스트를 생성함
+
+### 컨텍스트를 사용하기 전에 고려해야할 부분
+- 컨텍스트는 다른 레벨의 많은 컴포넌트가 특정 데이터를 필요로 하는 경우에 사용
+- 컴포넌트와 컨텍스트가 연동되면 재사용성이 떨어지게 된다(주의)
+- 다른 레벨의 많은 컴포넌트가 데이터를 필요로 하는 경우가 아니면 props를 통해 데이터를 전달하는 합성 방법이 더 적합
+
+### 컨텍스트 API
+- React.createContext
+    ```js
+    const MyContext = React.createContext(기본값)
+    ```
+
+### Context.Provider
+- Context.Provider 컴포넌트로 하위 컴포넌트들을 감싸주면 모든 하위 컴포넌트들이 해당 컨텍스트의 데이터에 접근할 수 있다
+    ```js
+    <MyContext.Provider value={/*some value*/}>
+    ```
+- Provider 컴포넌트에는 value라는 prop이 있고 이것은 Provider 컴포넌트 하위에 있는 컴포넌트에 전달
+- 하위 컴포넌트를 consumer 컴포넌트라고 한다
+
+### useContext
+- 함수형 컴포넌트에서 컨텍스트를 사용하기 위해 컴포넌트를 매번 Consumer 컴포넌트로 감싸주는 것보다 좋은 방법이 있다
+- 바로 Hook을 사용하는 것이다
+
+### useState vs useContext
+- useState: 로컬(해당 컴포넌트)에 있는 상태를 관리하는 것
+- useContext: 전역적으로 하위 컴포넌트에 대해서도 사용할 수 있게 하는 것
+
 ## 6월 5일 강의 내용
 ### shared state
 - 공유된 컴포넌트, 자식 컴포넌트들이 가장 가까운 부모 컴포넌트의 state를 공유해서 사용하는 것
@@ -102,17 +155,17 @@
 ### 이벤트 핸들링
 #### 이벤트 처리하기
 - DOM에서 클릭 이벤트 처리하는 예제 코드
-```js
-<button onClick="activate()">
-    Activate
-</button>
-```
+    ```js
+    <button onClick="activate()">
+        Activate
+    </button>
+    ```
 - React에서 클릭 이벤트 처리하는 예제 코드
-```jsx
-<button onClick={activate}>
-    Activate
-</button>
-```
+    ```jsx
+    <button onClick={activate}>
+        Activate
+    </button>
+    ```
 어떤 이벤트가 발생했을 때 해당 이벤트를 처리하는 함수를 **이벤트 핸들러**라 한다.
 * 클래스 컴포넌트
   - 클래스의 함수로 정의하고 생성자에게 바인딩해서 사용
@@ -128,7 +181,7 @@
     - state를 사용하기 위한 훅
     - 함수 컴포넌트에서는 기본적으로 state라는 것을 제공하지 않음
     - 사용법
-        ```jsx
+        ```js
         const [변수명, set함수명] = useState(초깃값);
         ```
 - useEffect()
@@ -136,7 +189,7 @@
     - 사이드 이펙트란 서버에서 데이터를 받아오거나 수동으로 DOM을 변경하는 등의 작업
     - useEffect() 훅만으로 클래스 컴포넌트의 생명주기 함수들과 동일한 기능을 수행할 수 있음
     - 사용법
-        ```jsx
+        ```js
         useEffect(이펙트 함수, 의존성 배열)
         // 의존성 배열 안에 있는 변수 중에 하나라도 값이 변경되었을 때 이펙트 함수가 실행
         // 의존성 배열에 빈 배열([])을 넣으면 마운트와 언마운트시에 단 한 번씩만 실행
@@ -165,19 +218,19 @@
 
 ### 컴포넌트의 종류
 - 함수 컴포넌트
-```jsx
-function Welcome(props) {
-    return <h1>안녕, {props.name} </h1>
-}
-```
-- 클래스 컴포넌트
-```jsx
-class Welcome extends React.Component {
-    render() {
-        return <h1>안녕, {this.props.name}</h1>
+    ```jsx
+    function Welcome(props) {
+        return <h1>안녕, {props.name} </h1>
     }
-}
-```
+    ```
+- 클래스 컴포넌트
+    ```jsx
+    class Welcome extends React.Component {
+        render() {
+            return <h1>안녕, {this.props.name}</h1>
+        }
+    }
+    ```
 ### 컴포넌트 네이밍 규칙
 컴포넌트의 이름은 항상 대문자로 시작해야한다.
 ```jsx

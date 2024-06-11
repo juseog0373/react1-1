@@ -12,11 +12,13 @@ import Calculator from './chapter12/Calculator';
 import WelcomeDialog from './chapter13/WelcomeDialog';
 import ConfirmButton from './chapter08/ConfirmButton';
 import ProfileCard from './chapter13/ProfileCard';
+import MainContent from './chapter14/MainContext';
+import MainContext from './chapter14/MainContext';
 
 export default function App() {
   return (
     <div className="App">
-      <ProfileCard/>
+      <MainContext/>
     </div>
   );
 }
