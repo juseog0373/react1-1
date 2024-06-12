@@ -3,7 +3,7 @@ import './App.css';
 import Welcome from './chapter05/Welcome';
 import Toggle from './chapter08/Toggle';
 import LoginControl from './chapter09/LoginControl';
-import MainPage from './MainPage';
+import MainPage from './chapter15/MainPage';
 import LandingPage from './chapter09/LandingPage';
 import NumberList from './chapter10/NumberList';
 import AttendanceBook from './chapter10/AttendanceBook';
@@ -18,7 +18,7 @@ import MainContext from './chapter14/MainContext';
 export default function App() {
   return (
     <div className="App">
-      <MainContext/>
+      <MainPage/>
     </div>
   );
 }
