@@ -9,10 +9,10 @@ export default function AttendanceBook() {
 }
 
 const students = [
-    {name: '홍길동'},
-    {name: '홍길동2'},
-    {name: '홍길동3'},
-    {name: '홍길동4'},
-    {name: '홍길동5'},
-    {name: '홍길동6'},
+    {id: 1, name: '홍길동'},
+    {id: 2, name: '홍길동2'},
+    {id: 3, name: '홍길동3'},
+    {id: 4, name: '홍길동4'},
+    {id: 5, name: '홍길동5'},
+    {id: 6, name: '홍길동6'},
 ]
