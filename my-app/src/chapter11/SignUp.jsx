@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function SignUp(props) {
+export default function SignUp() {
     const [name, setName] = useState("");
     const [gender, setGender] = useState("남자");
     const [test, setTest] = useState("");
@@ -18,8 +18,8 @@ function SignUp(props) {
     }
 
     const handleSubmit = (event) => {
-        alert(`이름: ${name}, 성별: ${gender}, 테스트: ${test}`);
-        event.preventDefault();
+        alert(`이름: ${name}, 성별: ${gender}, 테스트: ${test}`)
+        event.preventDefault()
     };
 
     return (
@@ -40,7 +40,5 @@ function SignUp(props) {
             <textarea onChange={handleChangeTest}></textarea>
             <button type="submit">제출</button>
         </form>
-    );
+    )
 }
-
-export default SignUp;
